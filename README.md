@@ -36,3 +36,7 @@ Para cada mes se exige que:
 ## Operación esperada
 
 Al ejecutar un nuevo cierre, por ejemplo **agosto 2026**, no es necesario modificar `index.html` ni `app.js`. Sólo se agrega el objeto `2026-08` a `data/monthly.json`; el dashboard incorpora el nuevo mes automáticamente.
+
+---
+
+Despliegue inicial de GitHub Pages activado el 19 de agosto de 2026.
