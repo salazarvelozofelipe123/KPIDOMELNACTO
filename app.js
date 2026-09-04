@@ -75,7 +75,7 @@
     $('historyTable').innerHTML=months.map(m=>`<tr><td>${m.name}</td><td>${m.total}</td><td>${m.domel}</td><td>${m.noadm}</td><td><b>${pct(m.digital)}</b></td></tr>`).join('');
     $('annualInsights').innerHTML=`<div><b>${totalGrowth>=0?'+':''}${fmt(totalGrowth)}%</b><span>variación del volumen entre ${first.name} y ${last.name}</span></div><div><b>${domelGrowth>=0?'+':''}${fmt(domelGrowth)}%</b><span>variación de trámites DOMEL</span></div><div><b>${best.name}: ${pct(best.digital)}</b><span>mayor tasa mensual cargada</span></div><div><b>${pct(cum)}</b><span>digitalización acumulada ponderada</span></div>`;
     const annualCert=aggregatePareto('paretoCert'), annualExp=aggregatePareto('paretoExp');
-    $('annualParetoTitle').textContent=`Pareto acumulado del año en curso · ${first.name} a ${last.name} ${last.key.slice(0,4)}`;
+    $('annualParetoTitle').textContent=`Pareto acumulado del año en curso · ${last.key.slice(0,4)}`;
     renderPareto('annualParetoCert',annualCert); renderPareto('annualParetoExp',annualExp);
   }
 
