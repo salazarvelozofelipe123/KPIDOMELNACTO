@@ -3,7 +3,7 @@
   "municipality": "Nacimiento",
   "program": "DOM en Línea",
   "year": 2026,
-  "updatedAt": "2026-08-19T15:16:00-04:00",
+  "updatedAt": "2026-09-04T10:00:00-04:00",
   "months": [
     {
       "key": "2026-05",
@@ -33,18 +33,58 @@
       "certPct": 9.3,
       "expPct": 41.7,
       "paretoCert": [
-        {"name":"Informaciones Previas","total":25,"domel":5},
-        {"name":"Permiso y Recepción","total":25,"domel":2},
-        {"name":"Número","total":24,"domel":2},
-        {"name":"Vivienda Social","total":20,"domel":0},
-        {"name":"Zonificación","total":12,"domel":0}
+        {
+          "name": "Informaciones Previas",
+          "total": 25,
+          "domel": 5
+        },
+        {
+          "name": "Permiso y Recepción",
+          "total": 25,
+          "domel": 2
+        },
+        {
+          "name": "Número",
+          "total": 24,
+          "domel": 2
+        },
+        {
+          "name": "Vivienda Social",
+          "total": 20,
+          "domel": 0
+        },
+        {
+          "name": "Zonificación",
+          "total": 12,
+          "domel": 0
+        }
       ],
       "paretoExp": [
-        {"name":"Regularización Ley 20.898","total":10,"domel":2},
-        {"name":"OM Ampliación Vivienda Social","total":9,"domel":2},
-        {"name":"DJ Ampliación Vivienda Social","total":6,"domel":0},
-        {"name":"PE Obra Nueva","total":4,"domel":4},
-        {"name":"PE Regularización","total":3,"domel":1}
+        {
+          "name": "Regularización Ley 20.898",
+          "total": 10,
+          "domel": 2
+        },
+        {
+          "name": "OM Ampliación Vivienda Social",
+          "total": 9,
+          "domel": 2
+        },
+        {
+          "name": "DJ Ampliación Vivienda Social",
+          "total": 6,
+          "domel": 0
+        },
+        {
+          "name": "PE Obra Nueva",
+          "total": 4,
+          "domel": 4
+        },
+        {
+          "name": "PE Regularización",
+          "total": 3,
+          "domel": 1
+        }
       ],
       "status": "VALIDADO",
       "note": "Cierre mensual validado con desglose Pareto disponible."
@@ -58,23 +98,141 @@
       "digital": 13.7,
       "noadm": 27,
       "envios": 65,
-      "certPct": 12.0,
+      "certPct": 12,
       "expPct": 36.8,
       "paretoCert": [
-        {"name":"Informaciones Previas","total":53,"domel":17},
-        {"name":"Permiso y Recepción","total":52,"domel":5},
-        {"name":"Vivienda Social","total":39,"domel":2},
-        {"name":"Zonificación","total":22,"domel":0},
-        {"name":"Correspondencia","total":22,"domel":0}
+        {
+          "name": "Informaciones Previas",
+          "total": 53,
+          "domel": 17
+        },
+        {
+          "name": "Permiso y Recepción",
+          "total": 52,
+          "domel": 5
+        },
+        {
+          "name": "Vivienda Social",
+          "total": 39,
+          "domel": 2
+        },
+        {
+          "name": "Zonificación",
+          "total": 22,
+          "domel": 0
+        },
+        {
+          "name": "Correspondencia",
+          "total": 22,
+          "domel": 0
+        }
       ],
       "paretoExp": [
-        {"name":"DJ · Ampliación Vivienda Social","total":8,"domel":0},
-        {"name":"PE · Regularización","total":5,"domel":4},
-        {"name":"PE · Obra Nueva","total":3,"domel":3},
-        {"name":"OM · Ampliación Vivienda Social","total":3,"domel":0}
+        {
+          "name": "DJ · Ampliación Vivienda Social",
+          "total": 8,
+          "domel": 0
+        },
+        {
+          "name": "PE · Regularización",
+          "total": 5,
+          "domel": 4
+        },
+        {
+          "name": "PE · Obra Nueva",
+          "total": 3,
+          "domel": 3
+        },
+        {
+          "name": "OM · Ampliación Vivienda Social",
+          "total": 3,
+          "domel": 0
+        }
       ],
       "status": "VALIDADO",
       "note": "Cierre validado con 277 admisibles y fuentes reconciliadas. Pareto de Expedientes construido con D. JURADA + EDIFICACIÓN + OBRA MENOR."
+    },
+    {
+      "key": "2026-08",
+      "name": "Agosto",
+      "total": 293,
+      "domel": 34,
+      "presencial": 259,
+      "digital": 11.6,
+      "noadm": 19,
+      "envios": 53,
+      "certPct": 8,
+      "expPct": 41.9,
+      "paretoCert": [
+        {
+          "name": "Permiso y Recepción",
+          "total": 56,
+          "domel": 1
+        },
+        {
+          "name": "Número",
+          "total": 40,
+          "domel": 3
+        },
+        {
+          "name": "Vivienda Social",
+          "total": 39,
+          "domel": 1
+        },
+        {
+          "name": "Informaciones Previas",
+          "total": 29,
+          "domel": 11
+        },
+        {
+          "name": "Afectación a Utilidad Pública",
+          "total": 27,
+          "domel": 1
+        }
+      ],
+      "paretoExp": [
+        {
+          "name": "PE · Regularización",
+          "total": 12,
+          "domel": 2
+        },
+        {
+          "name": "PE · Obra Nueva",
+          "total": 7,
+          "domel": 7
+        },
+        {
+          "name": "DJ · Ampliación Vivienda Social",
+          "total": 5,
+          "domel": 0
+        },
+        {
+          "name": "OM · Ampliación ≤100 m²",
+          "total": 4,
+          "domel": 4
+        },
+        {
+          "name": "Recepción definitiva de edificación",
+          "total": 2,
+          "domel": 0
+        }
+      ],
+      "sources": [
+        {
+          "name": "Certificados DOM Año 2026",
+          "location": "Hoja INGRESOS"
+        },
+        {
+          "name": "Permisos de Edificación y Obra Menor",
+          "location": "D. JURADA · EDIFICACIÓN · OBRA MENOR"
+        },
+        {
+          "name": "NACIMIENTO AGOSTO.xlsx",
+          "location": "Reporte DOMEL mensual"
+        }
+      ],
+      "status": "VALIDADO",
+      "note": "Cierre agosto 2026 auditado: 293 admisibles, 34 DOMEL y 19 no admisibles. Reporte DOMEL usado como fuente exclusiva para admisibilidad y canal digital; folios municipales solo para trazabilidad."
     }
   ]
 }
