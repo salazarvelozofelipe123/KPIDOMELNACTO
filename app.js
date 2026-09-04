@@ -30,6 +30,28 @@
     el.innerHTML = rows.map(r => `<div class="pareto-row"><div class="pareto-label"><b>${r.name}</b><span>${r.total} total · ${r.domel || 0} DOMEL</span></div><div class="track"><div style="width:${r.total/max*100}%"></div></div></div>`).join('');
   }
 
+  function aggregatePareto(field){
+    const aliases = {
+      'regularizacion ley 20 898': 'PE · Regularización',
+      'pe regularizacion': 'PE · Regularización',
+      'pe obra nueva': 'PE · Obra Nueva',
+      'dj ampliacion vivienda social': 'DJ · Ampliación Vivienda Social',
+      'om ampliacion vivienda social': 'OM · Ampliación Vivienda Social',
+      'om ampliacion 100 m2': 'OM · Ampliación ≤100 m²',
+      'recepcion definitiva de edificacion': 'Recepción definitiva de edificación'
+    };
+    const totals = new Map();
+    months.forEach(m => (m[field] || []).forEach(row => {
+      const key = String(row.name || '').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
+      const name = aliases[key] || row.name;
+      const current = totals.get(name) || {name,total:0,domel:0};
+      current.total += Number(row.total || 0);
+      current.domel += Number(row.domel || 0);
+      totals.set(name,current);
+    }));
+    return [...totals.values()].sort((a,b) => b.total-a.total || b.domel-a.domel || a.name.localeCompare(b.name,'es')).slice(0,5);
+  }
+
   function trendSvg(){
     const W=500,H=210,p=35, vals=months.map(m=>m.digital);
     let min=Math.floor(Math.min(...vals)-2), max=Math.ceil(Math.max(...vals)+2);
@@ -52,8 +74,9 @@
     $('annualQuality').innerHTML=`<div class="donut" style="background:conic-gradient(#16a34a 0 ${adm}%,#ef4444 ${adm}% 100%)"><div><b>${fmt(adm)}%</b><small>admisible</small></div></div><div class="metric-list"><div><b>${domel}</b><span>admisibles DOMEL</span></div><div><b>${noadm}</b><span>no admisibles</span></div><div><b>${envios}</b><span>envíos DOMEL</span></div></div>`;
     $('historyTable').innerHTML=months.map(m=>`<tr><td>${m.name}</td><td>${m.total}</td><td>${m.domel}</td><td>${m.noadm}</td><td><b>${pct(m.digital)}</b></td></tr>`).join('');
     $('annualInsights').innerHTML=`<div><b>${totalGrowth>=0?'+':''}${fmt(totalGrowth)}%</b><span>variación del volumen entre ${first.name} y ${last.name}</span></div><div><b>${domelGrowth>=0?'+':''}${fmt(domelGrowth)}%</b><span>variación de trámites DOMEL</span></div><div><b>${best.name}: ${pct(best.digital)}</b><span>mayor tasa mensual cargada</span></div><div><b>${pct(cum)}</b><span>digitalización acumulada ponderada</span></div>`;
-    $('annualParetoTitle').textContent=`Pareto del último mes · ${monthYear(last)}`;
-    renderPareto('annualParetoCert',last.paretoCert||[]); renderPareto('annualParetoExp',last.paretoExp||[]);
+    const annualCert=aggregatePareto('paretoCert'), annualExp=aggregatePareto('paretoExp');
+    $('annualParetoTitle').textContent=`Pareto acumulado del año en curso · ${first.name} a ${last.name} ${last.key.slice(0,4)}`;
+    renderPareto('annualParetoCert',annualCert); renderPareto('annualParetoExp',annualExp);
   }
 
   function renderMonth(i){
