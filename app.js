@@ -32,7 +32,7 @@
 
   function aggregatePareto(field){
     const aliases = {
-      'regularizacion ley 20 898': 'PE · Regularización',
+      'regularizacion ley 20 898': 'Regularización Ley 20.898',
       'pe regularizacion': 'PE · Regularización',
       'pe obra nueva': 'PE · Obra Nueva',
       'dj ampliacion vivienda social': 'DJ · Ampliación Vivienda Social',
